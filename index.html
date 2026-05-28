@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AVANCE - Cursos e Aplicativos</title>
+    <style>
+        /* Estilos Gerais */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 10px;
+            background-color: #f5f5f5;
+            color: #333;
+            text-align: center;
+        }
+
+        /* Cabeçalho Profissional */
+        header {
+            background: linear-gradient(135deg, #0a1f44 0%, #a01a1a 100%);
+            color: white;
+            padding: 30px 15px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 32px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        header h2 {
+            margin: 10px 0 15px 0;
+            font-size: 18px;
+            font-style: italic;
+            font-weight: normal;
+            opacity: 0.9;
+        }
+        .header-legal {
+            font-size: 13px;
+            opacity: 0.8;
+            line-height: 1.5;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        /* Títulos de Seção */
+        .secao-titulo {
+            background-color: #333;
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 18px;
+            margin: 30px 0 15px 0;
+        }
+
+        /* Grid de Cursos */
+        .cursos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 15px;
+        }
+
+        /* Card de Curso */
+        .curso-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.2s;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .curso-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 10px rgba(0,0,0,0.15);
+        }
+
+        .img-container {
+            width: 100%;
+            height: 160px;
+            overflow: hidden;
+        }
+
+        .img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .curso-info {
+            padding: 15px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .curso-titulo {
+            font-weight: bold;
+            font-size: 17px;
+            margin-bottom: 5px;
+        }
+
+        .curso-desc {
+            font-size: 13px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .curso-preco {
+            font-size: 16px;
+            font-weight: bold;
+            color: #2e7d32;
+            margin-top: auto;
+        }
+
+        /* FAQ Seção Rodapé */
+        .faq-secao {
+            background-color: #fff;
+            padding: 25px;
+            border-radius: 12px;
+            margin: 40px auto 20px auto;
+            text-align: left;
+            max-width: 650px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .faq-titulo {
+            text-align: center;
+            color: #007bff;
+            font-size: 22px;
+            margin-bottom: 20px;
+        }
+
+        .faq-item {
+            margin-bottom: 15px;
+        }
+
+        .faq-pergunta {
+            font-weight: bold;
+            font-size: 15px;
+            color: #333;
+        }
+
+        .faq-resposta {
+            font-size: 14px;
+            color: #666;
+            margin-top: 4px;
+        }
+
+        /* Footer e Promo */
+        footer {
+            margin-top: 20px;
+            padding: 20px;
+            border-top: 1px solid #ddd;
+        }
+
+        .promo-box {
+            background-color: #fff3cd;
+            border: 2px dashed #ffeeba;
+            color: #856404;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px auto;
+            font-weight: bold;
+            max-width: 550px;
+        }
+
+        .pix-container {
+            background-color: #e2e3e5;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px auto;
+            max-width: 400px;
+        }
+
+        .pix-chave {
+            display: block;
+            font-family: monospace;
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        .pix-instrucao {
+            font-size: 13px;
+            color: #555;
+            line-height: 1.4;
+        }
+
+        @media (max-width: 400px) {
+            .cursos-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>AVANCE</h1>
+        <h2>"Ultrapassando limites!"</h2>
+        <div class="header-legal">
+            Em conformidade com a Constituição Federal Art. 205 e 206<br>
+            Decreto Presidencial nº 5.154 e normas da LDB/MEC
+        </div>
+    </header>
+
+    <div class="container">
+        
+        <div class="secao-titulo">Formação Teológica</div>
+        <div class="cursos-grid">
+            <a href="https://shorturl.at/5LQ6e" class="curso-card" target="_blank">
+                <div class="img-container"><img src="https://images.unsplash.com/photo-1504052434569-70ad5836ab65?auto=format&fit=crop&w=400"></div>
+                <div class="curso-info">
+                    <div class="curso-titulo">Avançado em Teologia</div>
+                    <div class="curso-desc">Aprofundamento teológico de nível superior.</div>
+                    <div class="curso-preco">5x de R$ 64,60</div>
+                </div>
+            </a>
+            <a href="https://shorturl.at/5LQ6e" class="curso-card" target="_blank">
+                <div class="img-container"><img src="https://images.unsplash.com/photo-1544640808-32ca72ac7f37?auto=format&fit=crop&w=400"></div>
+                <div class="curso-info">
+                    <div class="curso-titulo">Médio em Teologia</div>
+                    <div class="curso-desc">Formação intermediária sólida e doutrinária.</div>
+                    <div class="curso-preco">6x de R$ 43,49</div>
+                </div>
+            </a>
+            <a href="https://shorturl.at/5LQ6e" class="curso-card" target="_blank">
+                <div class="img-container"><img src="https://images.unsplash.com/photo-1532012197267-da84d127e765?auto=format&fit=crop&w=400"></div>
+                <div class="curso-info">
+                    <div class="curso-titulo">Básico em Teologia</div>
+                    <div class="curso-desc">Fundamentos essenciais da fé cristã.</div>
+                    <div class="curso-preco">5x de R$ 38,90</div>
+                </div>
+            </a>
+            <a href="https://shorturl.at/5LQ6e" class="curso-card" target="_blank">
+                <div class="img-container"><img src="https://images.unsplash.com/photo-1614728894747-a83421e2b9c9?auto=format&fit=crop&w=400"></div>
+                <div class="curso-info">
+                    <div class="curso-titulo">Escatologia Pré-Tribulacionista</div>
+                    <div class="curso-desc">Estudo detalhado dos eventos finais.</div>
+                    <div class="curso-preco">5x de R$ 38,90</div>
+                </div>
+            </a>
+        </div>
+
+  <div class="secao-titulo">Escola de Hebraico</div>
+<div class="cursos-grid">
+    <a href="https://shorturl.at/5LQ6e" class="curso-card" target="_blank">
+        <div class="img-container">
+            <img src="https://images.unsplash.com/photo-1588072432836-e10032774350?auto=format&fit=crop&w=400&q=80" alt="Talmid Alfabetização">
+        </div>
+        <div class="curso-info">
+            <div class="curso-titulo">Talmid Alfabetização</div>
+            <div class="curso-desc">Alfabetização completa no idioma sagrado.</div>
+            <div class="curso-preco">5x de R$ 38,90</div>
+        </div>
+    </a>
+
+    <a href="https://shorturl.at/5LQ6e" class="curso-card" target="_blank">
+        <div class="img-container">
+            <img src="https://images.unsplash.com/photo-1544640808-32ca72ac7f37?auto=format&fit=crop&w=400&q=80" alt="Médio de Hebraico">
+        </div>
+        <div class="curso-info"> <div class="curso-titulo">Médio de Hebraico M.2</div>
+            <div class="curso-desc">Gramática avançada e tradução.</div>
+            <div class="curso-preco">5x de R$ 48,90</div>
+        </div>
+    </a>
+
+    <a href="https://shorturl.at/5LQ6e" class="curso-card" target="_blank">
+        <div class="img-container">
+            <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=400" alt="Laboratório Hebraico">
+        </div>
+        <div class="curso-info">
+            <div class="curso-titulo">Laboratório Hebraico</div>
+            <div class="curso-desc">Prática intensiva de exegese bíblica.</div>
+            <div class="curso-preco">5x de R$ 28,90</div>
+        </div>
+    </a>
+</div>
+
+        <div class="secao-titulo">Ministérios e Liderança</div>
+<div class="cursos-grid">
+            </a>
+            <a href="https://shorturl.at/5LQ6e" class="curso-card" target="_blank">
+       <div class="img-container"><img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=400"></div>
+        <div class="curso-info">
+                  <div class="curso-titulo">Ministro Classe A</div>
+                    <div class="curso-desc">Gabinete digital para gestão, homilética e saúde ministerial.</div>
+                    <div class="curso-preco">R$ 48,90</div>
+                </div>
+                </a>
+    <a href="https://shorturl.at/5LQ6e" class="curso-card" target="_blank">
+        <div class="img-container"><img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=400"></div>
+                    <div class="curso-titulo">Liderança Cristã</div>
+                    <div class="curso-desc">Capacitação ministerial e gestão de pessoas.</div>
+                    <div class="curso-preco">5x de R$ 58,90</div>
+                </div>
+            </a>
+            <a href="https://shorturl.at/5LQ6e" class="curso-card" target="_blank">
+<div class="img-container"><img src="https://images.unsplash.com/photo-1490730141103-6cac27aaab94?auto=format&fit=crop&w=400" alt="Liderança cristã"></div>
+                <div class="curso-info">
+                    <div class="curso-titulo">Formação de Diáconos</div>
+                    <div class="curso-desc">Serviço prático e espiritual na igreja.</div>
+                    <div class="curso-preco">5x de R$ 28,90</div>
+                </div>
+            </a>
+            <a href="https://shorturl.at/5LQ6e" class="curso-card" target="_blank">
+                <div class="img-container"><img src="https://images.unsplash.com/photo-1504052434569-70ad5836ab65?auto=format&fit=crop&w=400&q=80"></div>
+                <div class="curso-info">
+                    <div class="curso-titulo">Curso Presbítero</div>
+                    <div class="curso-desc">Treinamento para o governo eclesiástico.</div>
+                    <div class="curso-preco">5x de R$ 48,90</div>
+                </div>
+            </a>
+            <a href="https://shorturl.at/5LQ6e" class="curso-card" target="_blank">
+                <div class="img-container"><img src="https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=400&q=80"></div>
+                <div class="curso-info">
+                    <div class="curso-titulo">Capelania</div>
+                    <div class="curso-desc">Assistência espiritual e social.</div>
+                    <div class="curso-preco">5x de R$ 48,90</div>
+                </div>
+            </a>
+            <a href="https://shorturl.at/5LQ6e" class="curso-card" target="_blank">
+                <div class="img-container"><img src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&w=400&q=80"></div>
+                <div class="curso-info">
+                    <div class="curso-titulo">Oratória Cristã</div>
+                    <div class="curso-desc">A arte de falar com clareza e autoridade.</div>
+                    <div class="curso-preco">5x de R$ 68,90</div>
+                </div>
+            </a>
+        </div>
+
+        <div class="secao-titulo">Gestão e Terapia</div>
+        <div class="cursos-grid">
+       <a href="https://shorturl.at/5LQ6e" class="curso-card" target="_blank">
+<div class="img-container">
+<img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2" alt="Consulta terapêutica"></div>
+                <div class="curso-info">
+                    <div class="curso-titulo">Terapeuta Digital</div>
+                    <div class="curso-desc">Atendimento e suporte emocional online.</div>
+                    <div class="curso-preco">5x de R$ 28,90</div>
+                </div>
+            </a>
+            <a href="https://shorturl.at/5LQ6e" class="curso-card" target="_blank">
+    <div class="img-container">
+<img src="https://images.unsplash.com/photo-1604881991720-f91add269bed" alt="Consulta de aconselhamento"></div>
+                <div class="curso-info">
+                    <div class="curso-titulo">Gestão Emocional SINCRO</div>
+                    <div class="curso-desc">Equilíbrio e inteligência emocional.</div>
+                    <div class="curso-preco">5x de R$ 38,90</div>
+                </div>
+            </a>
+            <a href="https://shorturl.at/5LQ6e" class="curso-card" target="_blank">
+                <div class="img-container"><img src="https://images.pexels.com/photos/355863/pexels-photo-355863.jpeg?auto=compress&cs=tinysrgb&w=600"></div>
+                <div class="curso-info">
+                    <div class="curso-titulo">Sincroterapia</div>
+                    <div class="curso-desc">Terapia integrativa para alma e espírito.</div>
+                    <div class="curso-preco">5x de R$ 38,90</div>
+                </div>
+            </a>
+        </div>
+
+        <div class="secao-titulo">Estrela Guia & Família</div>
+        <div class="cursos-grid">
+            <a href="https://shorturl.at/5LQ6e" class="curso-card" target="_blank">
+                <div class="img-container"><img src="https://images.unsplash.com/photo-1471306224500-6d0d218be372?auto=format&fit=crop&w=400"></div>
+                <div class="curso-info">
+                    <div class="curso-titulo">Estrela Guia (Família M1 e M2)</div>
+                    <div class="curso-desc">Mentoria completa para a base do lar.</div>
+                    <div class="curso-preco">5x de R$ 28,90</div>
+                </div>
+            </a>
+            <a href="https://shorturl.at/5LQ6e" class="curso-card" target="_blank">
+                <div class="img-container"><img src="https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=400"></div>
+                <div class="curso-info">
+                    <div class="curso-titulo">Seminário Família Firme</div>
+                    <div class="curso-desc">Edificando famílias inabaláveis.</div>
+                    <div class="curso-preco">5x de R$ 28,90</div>
+                </div>
+            </a>
+        </div>
+
+        <div class="secao-titulo">Ferramentas e Estudos</div>
+        <div class="cursos-grid">
+            <a href="https://shorturl.at/5LQ6e" class="curso-card" target="_blank">
+                <div class="img-container"><img src="https://images.unsplash.com/photo-1587440871875-191322ee64b0?auto=format&fit=crop&w=400"></div>
+                <div class="curso-info">
+                    <div class="curso-titulo">Beduíno (Quiz & Estudos)</div>
+                    <div class="curso-desc">Ferramentas dinâmicas de aprendizado.</div>
+                    <div class="curso-preco">5x de R$ 18,90</div>
+                </div>
+            </a>
+            <a href="https://shorturl.at/5LQ6e" class="curso-card" target="_blank">
+                <div class="img-container"><img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=400"></div>
+                <div class="curso-info">
+                    <div class="curso-titulo">Lapada Diária</div>
+                    <div class="curso-desc">Reflexões profundas para o seu dia.</div>
+                    <div class="curso-preco">5x de R$ 18,90</div>
+                </div>
+            </a>
+            <a href="https://shorturl.at/5LQ6e" class="curso-card" target="_blank">
+                <div class="img-container"><img src="https://images.unsplash.com/photo-1508962914676-134849a727f0?auto=format&fit=crop&w=400"></div>
+                <div class="curso-info">
+                    <div class="curso-titulo">Relógio de Deus</div>
+                    <div class="curso-desc">Cronologia bíblica dos Sete Milênios.</div>
+                    <div class="curso-preco">5x de R$ 48,90</div>
+                </div>
+            </a>
+            <a href="https://shorturl.at/5LQ6e" class="curso-card" target="_blank">
+                <div class="img-container"><img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=400"></div>
+                <div class="curso-info">
+                    <div class="curso-titulo">Seminário HAZAQ</div>
+                    <div class="curso-desc">Preparação intensiva de seminaristas cristãos.</div>
+                    <div class="curso-preco">36x de R$ 79,90</div>
+                </div>
+            </a>
+        </div>
+
+        <div class="secao-titulo">Missões e Públicos</div>
+        <div class="cursos-grid">
+            <a href="https://shorturl.at/5LQ6e" class="curso-card" target="_blank">
+                <div class="img-container"><img src="https://images.unsplash.com/photo-1529390079861-591de354faf5?auto=format&fit=crop&w=400&q=80"></div>
+                <div class="curso-info">
+                    <div class="curso-titulo">Seminário de Missões</div>
+                    <div class="curso-desc">Capacitação missionária transcultural.</div>
+                    <div class="curso-preco">5x de R$ 28,90</div>
+                </div>
+            </a>
+            <a href="https://shorturl.at/5LQ6e" class="curso-card" target="_blank">
+                <div class="img-container"><img src="https://images.unsplash.com/photo-1491438590914-bc09fcaaf77a?auto=format&fit=crop&w=400"></div>
+                <div class="curso-info">
+                    <div class="curso-titulo">Geração Inabalável</div>
+                    <div class="curso-desc">Estudo e mentoria para jovens.</div>
+                    <div class="curso-preco">5x de R$ 28,90</div>
+                </div>
+            </a>
+            <a href="https://shorturl.at/5LQ6e" class="curso-card" target="_blank">
+                <div class="img-container"><img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=400&q=80"></div>
+                <div class="curso-info">
+                    <div class="curso-titulo">Mulher de Valor</div>
+                    <div class="curso-desc">Edificação para a mulher cristã.</div>
+                    <div class="curso-preco">5x de R$ 28,90</div>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <div class="faq-secao">
+        <h2 class="faq-titulo">Dúvidas Frequentes (FAQ)</h2>
+        <div class="faq-item">
+            <div class="faq-pergunta">Como funcionam os cursos?</div>
+            <div class="faq-resposta">Todos os nossos cursos são realizados exclusivamente via Aplicativos. Cada Curso tem seu App próprio.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-pergunta">Qual é a duração?</div>
+            <div class="faq-resposta">Os cursos são na modalidade livre. Você pode fazer tudo no seu tempo, conforme sua disponibilidade.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-pergunta">Como faço o pagamento?</div>
+            <div class="faq-resposta">O pagamento é via PIX. Após a matrícula, você envia o comprovante para liberação imediata.</div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="promo-box">
+            🎁 Adquirindo qualquer um dos Cursos você concorrerá há um Brinde Surpresa!
+            <br><br>
+            Mande sua resposta no nosso WhatsApp com seu nome completo:<br>
+            <strong>"Qual é o slogan da AVANCE?"</strong>
+        </div>
+
+        <div class="pix-container">
+            <strong>PAGAMENTOS VIA PIX:</strong>
+            <span class="pix-chave">gilinbrazil@gmail.com</span>
+            <span class="pix-instrucao">Copie a chave acima, pague no app do seu banco e envie o comprovante após preencher a matrícula.</span>
+        </div>
+        
+        <p style="margin-top: 30px; font-weight: bold;">AVANCE - Made in Brasil</p>
+    </footer>
+
+</body>
+</html>
